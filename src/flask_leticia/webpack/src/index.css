@@ -1,0 +1,20 @@
+.row {
+  display: flex;
+}
+
+.cell {
+  --border: 1px;
+  display: grid;
+  width: 25px;
+  aspect-ratio: 1/1;
+  background-color: red;
+  border: var(--border) solid blue;
+  margin-right: calc(-1 *  var(--border));
+  margin-top: calc(-1 *  var(--border));
+  cursor: pointer;
+  place-items: center;
+}
+
+#range {
+  width: calc(100% - 5rem);
+}

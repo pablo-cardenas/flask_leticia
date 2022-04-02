@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    td, th {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">grid_size</th>
+        <th scope="col">params</th>
+        <th scope="col">seed</th>
+        <th scope="col">#answers</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for question in questions %}
+      <tr>
+        <th scope="row"><a href="{{ url_for('poll.question_detail', id=question.id) }}">{{ question.id }}</a></th>
+        <td>{{ question.nrow }}x{{ question.ncol }}</td>
+        <td>{{ question.params }}</td>
+        <td>{{ question.seed }}</td>
+        <td>{{ question.answers|length }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</body>
+</html>

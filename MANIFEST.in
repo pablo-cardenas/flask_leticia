@@ -1,0 +1,2 @@
+graft src/flask_leticia/webpack
+graft src/flask_leticia/templates
